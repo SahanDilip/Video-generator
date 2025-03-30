@@ -1,6 +1,9 @@
+
+
 import React from 'react'
 import Image from 'next/image'
 import {Button} from '@/components/ui/button'
+import Authentication from './Authentication'
 
 export default function Header() {
   return (
@@ -14,9 +17,11 @@ export default function Header() {
             <h2 className='text-2xl font-bold'>Video Gen</h2>
         </div>
         <div>
-            <Button>
-                Get Started
-            </Button>
+            <Authentication>
+                <Button>
+                    Get Started
+                </Button>
+            </Authentication>
         </div>
     </div>
   )

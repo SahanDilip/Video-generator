@@ -1,5 +1,6 @@
 import React from 'react'
 import {Button} from '@/components/ui/button'
+import Authentication from './Authentication'
 
 export default function Hero() {
   return (
@@ -10,12 +11,14 @@ export default function Hero() {
             <p className='mt-4 text-2xl text-center text-gray-500'>
             Create short videos with AI in seconds, effortlessly transforming your ideas into engaging visual content 🎬✨. With cutting-edge AI technology 🤖, you can quickly generate professional-grade videos, no prior video editing experience needed 🎥.</p>
             <div className='mt-7 gap-8 flex'>
-                    <Button variant='secondary'>
-                        Explore
-                    </Button>
-                    <Button>
-                        Get Started
-                    </Button>
+                      <Button variant='secondary'>
+                          Explore
+                      </Button>
+                    <Authentication>
+                      <Button>
+                          Get Started
+                      </Button>
+                    </Authentication>
             </div>
     </div>
   )
