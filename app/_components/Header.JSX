@@ -34,7 +34,7 @@ export default function Header() {
                         DashBoard
                     </Button>
                 </Link>
-                <Image src={user?.photoURL} alt="userImage" width={40} height={40} className='rounded-full'/>
+                {user?.pictureURL && <Image src={user?.pictureURL} alt="userImage" width={40} height={40} className='rounded-full'/>}
             </div>
             )}
         </div>

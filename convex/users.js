@@ -13,14 +13,16 @@ export const createNewUser = mutation({
       .filter((q) => q.eq(q.field("email"), args.email))
       .collect();
 
-    if (user.length === 0) {
-      const result = await ctx.db.insert("users", {
-        name: args.name,
-        email: args.email,
-        photoURL: args.photoURL,
-        credits: 3,
-      });
-      return result;
+    if (!user[0]?.email) {
+      const userData = {
+        name:args?.name,
+        email:args?.email,
+        photoURL:args?.photoURL,
+        credits:3
+      }
+      
+      const result = await ctx.db.insert('users',userData)
+      return userData;
     }
 
     return user[0];

@@ -17,13 +17,16 @@ function Provider({ children }) {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       console.log(user);
       setUser(user);
-
+ 
+    if(user){
       const result = await createUser({
         name: user?.displayName,
         email: user?.email,
         photoURL: user?.photoURL,
       });
       console.log(result);
+      setUser(result)
+    }
     });
 
     return () => unsubscribe();
